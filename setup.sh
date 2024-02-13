@@ -13,7 +13,9 @@ if [ ! -f "$FILE" ]; then
     cd ..
     cd Desktop
     touch startserver.sh
-    echo "java -Xmx1024M -Xms1024M -jar server.jar" > startserver.sh
+    echo username=$(whoami) > startserver.sh
+    echo "cd /home/"$username"/server" >> startserver.sh
+    echo "java -Xmx1024M -Xms1024M -jar server.jar" >> startserver.sh
 fi
 
 
