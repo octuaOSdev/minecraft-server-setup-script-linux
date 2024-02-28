@@ -1,20 +1,11 @@
 username=$(whoami);
-FILEOUDCHECK="$PWD"/OUDcheck.sh
-if [ ! -f "$FILEOUDCHECK"]
-echo "Critical file missing!"
-echo "exiting..."
-exit 404
-fi
-mkdir mc-server
-cp "$FILEOUDCHECK" /etc/mc-server
-touch ver.txt /etc/mc-server
-echo 1.20.4 > /etc/mc-server/ver.txt
 
 
 
 
 
-sudo echo "sh /etc/mc-server/UpdateScripts.sh" >> /etc/rc.local
+
+
 FILE=/home/"$username"/server/true.txt
 if [ ! -f "$FILE" ]; then
     echo "File not found!"
