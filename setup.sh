@@ -14,14 +14,7 @@ if [ ! -f "$FILE" ]; then
     cd server
     touch true.txt
     touch eula.txt
-    result=$(dialog --title "EULA" --inputbox "Do you accept minecrafts EULA?:" 10 40 2>&1 >/dev/tty)
-    # Example: Check if the user's response is "yes" (case-insensitive)
-if [[ "${result,,}" == "yes" ]]; then
-    echo "eula=true" > /home/"$username"/server/eula.txt
-else
-    bash uninstall.sh
-    exit 400
-fi
+
 
     
     
@@ -40,3 +33,9 @@ echo "mkdir successful"
 cd /home/"$username"/server/
 rm -rf true.txt
 fi
+sudo touch /bin/server
+sudo echo "#!/bin/bash
+
+cd /home/"$username"/Desktop
+bash startserver.sh" >> /bin/server
+sudo chmod +x /usr/bin/server
