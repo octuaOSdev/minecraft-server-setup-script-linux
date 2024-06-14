@@ -18,7 +18,7 @@ if [ ! -f "$FILE" ]; then
 
     
     
-    wget  -P /home/"$username"/server/ "https://piston-data.mojang.com/v1/objects/8dd1a28015f51b1803213892b50b7b4fc76e594d/server.jar"
+    wget  -P /home/"$username"/server/ "https://piston-data.mojang.com/v1/objects/450698d1863ab5180c25d7c804ef0fe6369dd1ba/server.jar"
     cd ..
     cd Desktop
     touch startserver.sh
